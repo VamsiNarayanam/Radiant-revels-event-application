@@ -77,18 +77,48 @@ nav .navLinks .links a {
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 1.4px;
   font-size: 1.2rem;
-
-  padding:15px;
+  padding: 15px;
   color: #fff;
-  background: #000;
+  background: black;
   width: fit-content;
-  cursor: default;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.4s ease; 
+  position: relative;
+  overflow: hidden;
+}
+
+nav .navLinks .links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: width 0.4s ease, height 0.4s ease;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+nav .navLinks .links a:hover::before {
+  width: 0;
+  height: 0;
 }
 
 nav .navLinks .links a:hover {
-  transition: 0.3s;
-  cursor: pointer;
+  background: linear-gradient(45deg, #F5BD02, #ffbb33); 
+  color: #000; 
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
 }
+
+nav .navLinks .links a:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
 nav .hamburger {
   display: none;
 }
@@ -215,11 +245,46 @@ nav svg {
   padding: 15px 25px;
   color: #fff;
   font-size: 1.2rem;
-  background: #000;
+  background: black;
   width: fit-content;
-  cursor: default;
-
+  cursor: pointer; 
+  border-radius: 7px;
+  transition: all 0.4s ease; 
+  position: relative;
+  overflow: hidden;
 }
+
+.hero .item div a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: width 0.4s ease, height 0.4s ease;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero .item div a:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.hero .item div a:hover {
+  background: linear-gradient(45deg, #F5BD02, #ffbb33);
+  color: #000; 
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.hero .item div a:active {
+  transform: scale(0.95); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
 @media (max-width: 620px) {
   .hero {
     padding: 0 20px;
@@ -254,7 +319,7 @@ nav svg {
   font-size: 1.8rem;
 }
 .contact .banner .item p {
-  color: gray;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
   font-weight: bold;
 }
@@ -285,22 +350,54 @@ nav svg {
 .contact .banner:last-child .item form textarea {
   padding: 8px;
   background: transparent;
-  border: 1px solid #a2783a;
+  border: 1px solid #000000;
   border-radius: 7px;
 }
 .contact .banner:last-child .item form button {
-  padding: 15px 20px 15px 20px;
+  padding: 15px 20px;
   color: #fff;
-  background: #a2783a;
+  background: #000000;
   font-size: 1.2rem;
   font-family: "Nunito Sans", sans-serif;
   border: none;
   width: fit-content;
+  border-radius: 7px; 
+  transition: all 0.4s ease; 
+  position: relative;
+  overflow: hidden; 
 }
-.contact .banner:last-child .item form input:focus,
-.contact .banner:last-child .item form textarea:focus {
-  outline: none;
+
+.contact .banner:last-child .item form button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: width 0.4s ease, height 0.4s ease;
+  border-radius: 50%;
+  z-index: 0;
 }
+
+.contact .banner:last-child .item form button:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.contact .banner:last-child .item form button:hover {
+  background: linear-gradient(45deg, #F5BD02, #ffbb33); 
+  color: #000; 
+  transform: scale(1.05); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.contact .banner:last-child .item form button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
 @media (max-width: 830px) {
   .contact .banner {
     flex-direction: column;
